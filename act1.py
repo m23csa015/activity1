@@ -48,3 +48,32 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
+import numpy as np
+
+def relu(x):
+    return np.maximum(0, x)
+
+def leaky_relu(x, alpha=0.1):
+    return np.maximum(alpha * x, x)
+
+def tanh(x):
+    return np.tanh(x)
+
+random_values = [-3.5, -1.2, 0, 2.8, -4.1, 1.5, -0.7, 3.2, -2.4, 4.6]
+
+relu_values = [relu(val) for val in random_values]
+leaky_relu_values = [leaky_relu(val) for val in random_values]
+tanh_values = [tanh(val) for val in random_values]
+
+print("ReLU values for random data:")
+for val, relu_val in zip(random_values, relu_values):
+    print(f"Input: {val}, ReLU: {relu_val:.4f}")
+
+print("\nLeaky ReLU values for random data:")
+for val, leaky_relu_val in zip(random_values, leaky_relu_values):
+    print(f"Input: {val}, Leaky ReLU: {leaky_relu_val:.4f}")
+
+print("\nTanh values for random data:")
+for val, tanh_val in zip(random_values, tanh_values):
+    print(f"Input: {val}, Tanh: {tanh_val:.4f}")
