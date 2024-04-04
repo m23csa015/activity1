@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Define activation functions
+
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -14,16 +14,16 @@ def leaky_relu(x, alpha=0.1):
 def tanh(x):
     return np.tanh(x)
 
-# Generate input values
+
 x = np.linspace(-5, 5, 100)
 
-# Calculate outputs for each activation function
+
 y_sigmoid = sigmoid(x)
 y_relu = relu(x)
 y_leaky_relu = leaky_relu(x)
 y_tanh = tanh(x)
 
-# Plotting
+
 plt.figure(figsize=(10, 6))
 
 plt.subplot(2, 2, 1)
